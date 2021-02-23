@@ -3,13 +3,35 @@
 
 <head>
   <script src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.min.js"></script>
-  
-  <meta charset="utf-8" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+    
+  <meta charset="utf-8"/>
+  <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-  <script src="minimax.js"></script>
-  <script src="sketch.js"></script>
+  <div id="container">
+    <h1 id="board-text" class="text-center">Good luck!</h2>
+    <div id="board-parent">
+    </div>
+    <div class="row justify-content-between mb-3">
+      <div class="col">
+        <p id="board-note">Score: </p>
+      </div>
+      <div class="col text-right">
+        <button class="btn btn-outline-primary" id="reset-btn">RESET</button>
+        <div class="custom-control custom-switch">
+          <input type="checkbox" checked class="custom-control-input" id="ai-switch">
+          <label class="custom-control-label" for="ai-switch">Minimax</label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="scripts/minimax.js"></script>
+  <script src="scripts/board.js"></script>
 </body>
-
 </html>

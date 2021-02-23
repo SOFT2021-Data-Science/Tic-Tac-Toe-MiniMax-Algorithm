@@ -1,5 +1,16 @@
+var boardNote = document.getElementById("board-note");
 
-function bestMove() {
+function bestMove(hardMode) {
+  let bool = false;
+  if(hardMode == null)
+    bool = true;
+  if(hardMode == true) {
+    bool = false;
+  }
+  if(hardMode == false) {
+    bool = true;
+  }
+
     // AI's turn
     let bestScore = -Infinity;
     let move;
@@ -8,11 +19,13 @@ function bestMove() {
         // any available spots
         if (board[i][j] == '') {
           board[i][j] = ai;
-          let score = minimax(board, 0, false);
+          let score = minimax(board, 0, bool);
           board[i][j] = '';
           if (score > bestScore) {
-            bestScore = score;
+            //console.log("Score: " + score + "\n.........")
+            bestScore = score;; 
             move = { i, j };
+            boardNote.innerText=`AI SCORE : ${bestScore}\n` + `AI MOVE : ${move.i}, ${move.j}`;
           }
         }
       }
@@ -31,8 +44,7 @@ function bestMove() {
     let result = checkWinner();
     if (result !== null) {
       return scores[result];
-    }
-  
+    }  
     if (isMaximizing) {
       let bestScore = -Infinity;
       for (let i = 0; i < 3; i++) {
