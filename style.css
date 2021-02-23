@@ -4,11 +4,8 @@ body {
 }
 
 #container {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    display: block;
+    margin: 0 auto;
     width: 400px;
 }
 
@@ -22,3 +19,16 @@ canvas {
     border-radius: 0;
     width: 95px;
 }
+
+.masthead {
+    display: table;
+    width: 100%;
+    height: auto;
+    height: 100%;
+    padding: 200px 0;
+    text-align: center;
+  }
+  .masthead .intro-body {
+    display: table-cell;
+    vertical-align: middle;
+  }
